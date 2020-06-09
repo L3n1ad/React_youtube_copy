@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SearchBar = () => {
+const SearchBar = ({ onTermSubmit }) => {
   const [term, setTerm] = useState("");
 
   function inputChange(e) {
@@ -10,6 +10,7 @@ const SearchBar = () => {
   function onFormSubmit(e) {
     e.preventDefault();
     // TODO: make sure we call callback from parent component
+    onTermSubmit(term);
   }
   return (
     <div className="search-bar ui segment">
