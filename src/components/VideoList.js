@@ -5,10 +5,10 @@ const VideoList = ({ videos, onVideoSelect }) => {
   const videoItems = videos.map((video) => {
     return (
       <VideoItem
-        key={video.id.videoId}
+        key={video.id.videoId ? video.id.videoId : video.id.playlistId}
         video={video}
         onVideoSelect={onVideoSelect}
-      ></VideoItem>
+      />
     );
   });
   return <div className="ui relaxed divided list">{videoItems}</div>;
